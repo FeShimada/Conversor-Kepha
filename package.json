@@ -10,6 +10,7 @@
     "@types/node": "^16.11.49",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
+    "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
@@ -40,5 +41,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "saas": "^1.0.0",
+    "typescript-plugin-css-modules": "^3.4.0"
   }
 }
