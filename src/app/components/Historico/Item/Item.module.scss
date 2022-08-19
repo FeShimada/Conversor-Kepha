@@ -1,0 +1,17 @@
+@import '../../../../styles/variaveis';
+
+.historico__lista__item {
+    border: 2px solid $preto;
+    border-radius: 5px;
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0.2em 0;
+}
+
+.historico__item {
+    margin: 0.2em 0;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0.5em;
+}

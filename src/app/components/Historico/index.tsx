@@ -5,6 +5,7 @@ import { IUnidades } from "../../../interfaces/IUnidades"
 import { valorState } from "../../../state/atom"
 import { grausParaFahrenheit, grausParaKelvin, litrosParaGaloes, litrosParaOncas, metrosParaMilhas, metrosParaPes, quilosParaLibras, quilosParaOncas } from "../common/utils/conversores"
 import { Item } from "./Item"
+import styles from './Historico.module.scss'
 
 export const Historico = ( {unidadeBase}: IConversores ) => {
 
@@ -43,9 +44,9 @@ export const Historico = ( {unidadeBase}: IConversores ) => {
     }
 
     return (
-        <form onSubmit={gravar}>
-            <button>Gravar no histórico</button>
-            <ul>
+        <form onSubmit={gravar} className={styles.historico}>
+            <button className={styles.historico__botao}>Gravar no histórico</button>
+            <>
                 {convertido.map((item, index) =>
                 (
                     <Item
@@ -54,7 +55,7 @@ export const Historico = ( {unidadeBase}: IConversores ) => {
                     />
                 )
                 )}
-            </ul>
+            </>
         </form>
     )
 }
