@@ -8,7 +8,7 @@ import styles from './Conversor.module.scss';
 export const Conversor = ({ unidade, funcao }: IConversor) => {
 
     return (
-        <li className={styles.lista__item}> {funcao} {unidade} </li> 
+        <li className={styles.lista__item}> <strong className={styles.lista__valor}> {funcao} </strong>  {unidade} </li> 
     )
 }
     

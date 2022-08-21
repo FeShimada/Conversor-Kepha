@@ -15,7 +15,7 @@ export const GrausCelcius = () => {
     const unidadeBase = useRecoilValue(unidadeBaseState)
     useEffect(() => {
         setUnidadeBase('Graus Celcius')
-    }, [setUnidadeBase])
+    }, [setUnidadeBase]) 
 
     return (
         <section>

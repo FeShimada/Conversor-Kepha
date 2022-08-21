@@ -1,34 +1,44 @@
 
 
 export const metrosParaMilhas = (comprimento: number) => {
-    const milhas = comprimento / 1609;
+    const milhasString = (comprimento / 1609).toFixed(2);
+    const milhas = parseFloat(milhasString)
 
     return milhas;
 }
 
 export const metrosParaPes = (comprimento: number) => {
-    const pes = comprimento * 3.281;
+    const pesString = (comprimento * 3.281).toFixed(2);
+    const pes = parseFloat(pesString)
 
     return pes;
 }
 
 export const litrosParaOncas = (volume: number) => {
-    const oncas = volume * 33.814;
+    const oncasString = (volume * 33.814).toFixed(2);
+    const oncas = parseFloat(oncasString)
+
     return oncas;
 }
 
 export const litrosParaGaloes = (volume: number) => {
-    const galoes = volume / 3.785;
+    const galoesString = (volume / 3.785).toFixed(2);
+    const galoes = parseFloat(galoesString)
+
     return galoes;
 }
 
 export const quilosParaLibras = (massa: number) => {
-    const libras = massa * 2.205;
+    const librasString = (massa * 2.205).toFixed(2);
+    const libras = parseFloat(librasString)
+
     return libras;
 }
 
 export const quilosParaOncas = (massa: number) => {
-    const oncas = massa * 35.274;
+    const oncasString = (massa * 35.274).toFixed(2);
+    const oncas = parseFloat(oncasString)
+
     return oncas;
 }
 
@@ -40,4 +50,9 @@ export const grausParaKelvin = (temperatura: number) => {
 export const grausParaFahrenheit = (temperatura: number) => {
     const fahrenheit = (temperatura * 9/5) + 32;
     return fahrenheit;
+}
+
+export const valorFixo = (valor: number) => {
+    const valorFixo = valor
+    return valorFixo
 }

@@ -1,17 +1,32 @@
 @import '../../../../styles/variaveis';
 
 .historico__lista__item {
-    border: 2px solid $preto;
+    border: 5px solid rgb(50, 43, 63);
     border-radius: 5px;
     text-decoration: none;
     list-style-type: none;
     margin: 0.2em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
 }
 
-.historico__item {
+.historico__titulo {
     margin: 0.2em 0;
+    padding: 0.5em 0;
     color: white;
     font-size: 20px;
     font-weight: 700;
+}
+
+.historico__item {
+    color: white;
     padding: 0.5em;
+    box-sizing: border-box;
+    width: 30vh;
+}
+
+.historico__valor {
+    color: $azul-fluorescente;
 }
