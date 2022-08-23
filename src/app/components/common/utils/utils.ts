@@ -56,3 +56,9 @@ export const valorFixo = (valor: number) => {
     const valorFixo = valor
     return valorFixo
 }
+
+let id = 0
+
+export const obterId = (): number => {
+    return id++
+}

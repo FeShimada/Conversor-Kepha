@@ -1,14 +1,14 @@
 import { useEffect } from 'react';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { unidadeBaseState, valorState } from '../../../state/atom';
-import { litrosParaGaloes, litrosParaOncas } from '../../components/common/utils/conversores';
+import { litrosParaGaloes, litrosParaOncas } from '../../components/common/utils/utils';
 import { Conversor, Conversores } from '../../components/Conversor/Conversor';
 
 export const Litro = () => {
 
     const valor = useRecoilValue(valorState)
-    let oncas = litrosParaOncas(valor)
-    let galoes = litrosParaGaloes(valor)
+    const oncas = litrosParaOncas(valor)
+    const galoes = litrosParaGaloes(valor)
 
     const setUnidadeBase = useSetRecoilState(unidadeBaseState)
     const unidadeBase = useRecoilValue(unidadeBaseState)

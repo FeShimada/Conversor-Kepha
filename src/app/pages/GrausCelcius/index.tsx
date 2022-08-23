@@ -1,15 +1,14 @@
 import { useEffect } from 'react';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { unidadeBaseState, valorState } from '../../../state/atom';
-import { grausParaFahrenheit, grausParaKelvin } from '../../components/common/utils/conversores';
+import { grausParaFahrenheit, grausParaKelvin } from '../../components/common/utils/utils';
 import { Conversor, Conversores } from '../../components/Conversor/Conversor';
 
 export const GrausCelcius = () => {
 
     const valor = useRecoilValue(valorState)
-
-    const transformacao1 = grausParaKelvin(valor)
-    const transformacao2 = grausParaFahrenheit(valor)
+    const kelvin = grausParaKelvin(valor)
+    const fahrenheit = grausParaFahrenheit(valor)
 
     const setUnidadeBase = useSetRecoilState(unidadeBaseState)
     const unidadeBase = useRecoilValue(unidadeBaseState)
@@ -20,8 +19,8 @@ export const GrausCelcius = () => {
     return (
         <section>
             <Conversores unidadeBase={unidadeBase}>
-                <Conversor unidade='Kelvin' funcao={transformacao1} />
-                <Conversor unidade='Fahrenheit' funcao={transformacao2} />
+                <Conversor unidade='Kelvin' funcao={kelvin} />
+                <Conversor unidade='Fahrenheit' funcao={fahrenheit} />
             </Conversores>
         </section>
     )

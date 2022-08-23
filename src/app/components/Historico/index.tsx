@@ -1,34 +1,35 @@
-import { useState } from "react"
-import { useRecoilValue } from "recoil"
-import { IConversores } from "../../../interfaces/IConversores"
+import { useRecoilValue, useSetRecoilState } from "recoil"
 import { IUnidades } from "../../../interfaces/IUnidades"
-import { valorState } from "../../../state/atom"
-import { grausParaFahrenheit, grausParaKelvin, litrosParaGaloes, litrosParaOncas, metrosParaMilhas, metrosParaPes, quilosParaLibras, quilosParaOncas, valorFixo } from "../common/utils/conversores"
+import { conversoesState, unidadeBaseState, valorState } from "../../../state/atom"
+import { grausParaFahrenheit, grausParaKelvin, litrosParaGaloes, litrosParaOncas, metrosParaMilhas, metrosParaPes, obterId, quilosParaLibras, quilosParaOncas, valorFixo } from "../common/utils/utils"
 import { Item } from "./Item"
 import styles from './Historico.module.scss'
 
-export const Historico = ( {unidadeBase}: IConversores ) => {
+export const Historico = () => {
 
-    const [convertido, setConvertido] = useState<IUnidades[]>([])
+    const setConvertido = useSetRecoilState<IUnidades[]>(conversoesState)
+    const convertido = useRecoilValue<IUnidades[]>(conversoesState)
 
-    const gravar = (evento: React.FormEvent) => {
-        evento.preventDefault()
-        setConvertido(unidades => 
-                [
-                    ...unidades,
-                    {
-                        unidadeBaseNome,
-                        unidadeBaseValor,
-                        transformacao1,
-                        transformacao2,
-                        transformacao1Nome,
-                        transformacao2Nome
-                    }
-                ]
-            )
+    const gravar = (event: React.FormEvent) => {
+        event.preventDefault()
+        setConvertido(unidades =>
+            [
+                ...unidades,
+                {
+                    unidadeBaseNome,
+                    unidadeBaseValor,
+                    transformacao1,
+                    transformacao2,
+                    transformacao1Nome,
+                    transformacao2Nome,
+                    id: obterId()
+                }
+            ]
+        )
     }
 
-    let valor = useRecoilValue(valorState)
+    const unidadeBase = useRecoilValue(unidadeBaseState)
+    const valor = useRecoilValue(valorState)
     let unidadeBaseNome = ''
     let unidadeBaseValor = 0
     let transformacao1 = 0
@@ -70,13 +71,12 @@ export const Historico = ( {unidadeBase}: IConversores ) => {
         <form onSubmit={gravar} className={styles.historico}>
             <button className={styles.historico__botao}>Gravar no histórico</button>
             <>
-                {convertido.map((item, index) =>
-                (
+                {convertido.map(evento =>
                     <Item
-                        key={index}
-                        {...item}
+                        evento={evento}
+                        key={evento.id}
+                        {...evento}
                     />
-                )
                 )}
             </>
         </form>

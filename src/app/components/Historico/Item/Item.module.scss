@@ -1,15 +1,21 @@
 @import '../../../../styles/variaveis';
 
-.historico__lista__item {
+.historico {
     border: 5px solid rgb(50, 43, 63);
     border-radius: 5px;
-    text-decoration: none;
-    list-style-type: none;
     margin: 0.2em 0;
     display: flex;
     flex-direction: column;
     justify-content: left;
     align-items: center;
+    background-color: $cor-do-cabecalho;
+}
+
+.historico__container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
 }
 
 .historico__titulo {
@@ -18,6 +24,19 @@
     color: white;
     font-size: 20px;
     font-weight: 700;
+}
+
+.historico__icone {
+    font-size: 24px;
+    text-align: end;
+    cursor: pointer;
+    justify-self: end;
+    color: $vermelho;
+}
+
+.historico__lista {
+    text-decoration: none;
+    list-style-type: none;
 }
 
 .historico__item {
@@ -30,3 +49,4 @@
 .historico__valor {
     color: $azul-fluorescente;
 }
+

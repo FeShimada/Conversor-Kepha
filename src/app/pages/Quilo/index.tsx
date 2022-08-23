@@ -1,14 +1,14 @@
 import { useEffect } from 'react';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { unidadeBaseState, valorState } from '../../../state/atom';
-import { quilosParaLibras, quilosParaOncas } from '../../components/common/utils/conversores';
+import { quilosParaLibras, quilosParaOncas } from '../../components/common/utils/utils';
 import { Conversor, Conversores } from '../../components/Conversor/Conversor';
 
 export const Quilo = () => {
 
     const valor = useRecoilValue(valorState)
-    let libras = quilosParaLibras(valor)
-    let oncas = quilosParaOncas(valor)
+    const libras = quilosParaLibras(valor)
+    const oncas = quilosParaOncas(valor)
 
     const setUnidadeBase = useSetRecoilState(unidadeBaseState)
     const unidadeBase = useRecoilValue(unidadeBaseState)

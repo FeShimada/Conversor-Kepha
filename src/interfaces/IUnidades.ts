@@ -6,4 +6,5 @@ export interface IUnidades {
     transformacao2: number,
     transformacao1Nome: string,
     transformacao2Nome: string,
+    id?: number,
 }
