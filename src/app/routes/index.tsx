@@ -5,6 +5,7 @@ import { Litro } from "../pages/Litro"
 import { Metro } from "../pages/Metro"
 import { Quilo } from "../pages/Quilo"
 import { Historico } from "../components/Historico"
+import { NotFound } from "../pages/NotFound"
 
 export const AppRouter = () => {
 
@@ -12,14 +13,16 @@ export const AppRouter = () => {
         <Router>
             <Inicio />
             <Routes>
-                <Route path="/" element={<Litro/>}></Route>
-                <Route path="/metro" element={<Metro />}></Route>
-                <Route path="/litro" element={<Litro />}></Route>
-                <Route path="/quilo" element={<Quilo />}></Route>
-                <Route path="/graus-celcius" element={<GrausCelcius />}></Route>
-                <Route path="*"></Route>
+                <Route path="/" element={<Historico />}>
+                    <Route index element={<Litro/>}></Route>
+                    <Route path='litro' element={<Litro />}></Route>
+                    <Route path='metro' element={<Metro />}></Route>
+                    <Route path='quilo' element={<Quilo />}></Route>
+                    <Route path='graus-celcius' element={<GrausCelcius />}></Route>
+                </Route>
+                
+                <Route path='*' element={<NotFound />}></Route>
             </Routes>
-            <Historico />
         </Router>
     )
 } 

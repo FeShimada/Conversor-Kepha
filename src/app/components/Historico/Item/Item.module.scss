@@ -1,6 +1,6 @@
 @import '../../../../styles/variaveis';
 
-.historico {
+.item {
     border: 5px solid rgb(50, 43, 63);
     border-radius: 5px;
     margin: 0.2em 0;
@@ -11,22 +11,21 @@
     background-color: $cor-do-cabecalho;
 }
 
-.historico__container {
+.item__container {
     display: flex;
     align-items: center;
     width: 100%;
     justify-content: space-around;
 }
 
-.historico__titulo {
+.item__titulo {
     margin: 0.2em 0;
     padding: 0.5em 0;
-    color: white;
     font-size: 20px;
     font-weight: 700;
 }
 
-.historico__icone {
+.item__icone {
     font-size: 24px;
     text-align: end;
     cursor: pointer;
@@ -34,19 +33,28 @@
     color: $vermelho;
 }
 
-.historico__lista {
+.item__lista {
     text-decoration: none;
     list-style-type: none;
 }
 
-.historico__item {
-    color: white;
+.item__lista__item {
     padding: 0.5em;
     box-sizing: border-box;
     width: 30vh;
 }
 
-.historico__valor {
+.item__valor {
     color: $azul-fluorescente;
 }
 
+@media screen and (min-width: 1024px) {
+    .item {
+        padding: 0.2em 2em;
+        margin: 0.5em;
+    } 
+
+    .item__container {
+        justify-content: space-between;
+    }
+}

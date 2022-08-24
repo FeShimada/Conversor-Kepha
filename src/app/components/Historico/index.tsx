@@ -4,6 +4,7 @@ import { conversoesState, unidadeBaseState, valorState } from "../../../state/at
 import { grausParaFahrenheit, grausParaKelvin, litrosParaGaloes, litrosParaOncas, metrosParaMilhas, metrosParaPes, obterId, quilosParaLibras, quilosParaOncas, valorFixo } from "../common/utils/utils"
 import { Item } from "./Item"
 import styles from './Historico.module.scss'
+import { Outlet } from "react-router-dom"
 
 export const Historico = () => {
 
@@ -68,17 +69,23 @@ export const Historico = () => {
     }
 
     return (
-        <form onSubmit={gravar} className={styles.historico}>
-            <button className={styles.historico__botao}>Gravar no histórico</button>
-            <>
-                {convertido.map(evento =>
-                    <Item
-                        evento={evento}
-                        key={evento.id}
-                        {...evento}
-                    />
-                )}
-            </>
-        </form>
+        <>
+            <div>
+                <Outlet/>
+            </div>
+
+            <form onSubmit={gravar} className={styles.historico}>
+                <button className={styles.historico__botao}>Gravar no histórico</button>
+                <div className={styles.historico__item}>
+                    {convertido.map(evento =>
+                        <Item
+                            evento={evento}
+                            key={evento.id}
+                            {...evento}
+                        />
+                    )}
+                </div>
+            </form>
+        </>
     )
 }

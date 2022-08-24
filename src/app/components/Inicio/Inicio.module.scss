@@ -6,8 +6,7 @@
     padding: 0.5em 0;
 }
 
-.titulo {
-    color: white;
+.header__titulo {
     font-size: 34px;
     font-weight: 700;
 }
@@ -33,5 +32,23 @@
 
 .lista__link {
     text-decoration: none;
-    color: white;
+}
+
+@media screen and (min-width: 1024px) {
+    .header__titulo {
+        font-size: 45px;
+    } 
+
+    .container {
+        margin-top: 2em;
+    }
+
+    .lista__item {
+        padding: 1.5em 5em;
+    }
+
+    .lista__link {
+        font-size: 30px;
+        font-weight: 700;
+    }
 }

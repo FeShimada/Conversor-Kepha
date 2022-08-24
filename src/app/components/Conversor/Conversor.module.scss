@@ -11,7 +11,6 @@
 .container__titulo {
     font-size: 30px;
     font-weight: 700;
-    color: white;
 }
 
 .container__input {
@@ -20,7 +19,6 @@
     width: 60vw;
     text-align: center;
     background: $cinza-azul;
-    color: white;
     border: 3px solid $preto;
     border-radius: 5px;
 }
@@ -42,4 +40,11 @@
     margin: 1em 0;
     font-size: 25px;
     list-style: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .container__titulo {
+        font-size: 50px;
+        margin: 1em 0em;
+    }
 }

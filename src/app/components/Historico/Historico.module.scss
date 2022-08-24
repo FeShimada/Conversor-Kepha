@@ -10,8 +10,22 @@
 .historico__botao {
     margin: 1em 0;
     padding: 0.8em;
-    color: white;
     background-color: $cinza-azul;
     font-weight: 700;
     cursor: pointer;
+}
+
+@media screen and (min-width: 1024px) {
+    .historico__botao {
+        font-size: 30px;
+        font-weight: 700;
+        padding: 1em;
+    }
+
+    .historico__item {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: baseline;
+    }
 }

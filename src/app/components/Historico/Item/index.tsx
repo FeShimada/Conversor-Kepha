@@ -13,18 +13,18 @@ export const Item: React.FC<{ evento: IUnidades }> = ({ evento } ) => {
     }
 
     return (
-        <div className={styles.historico}>
-            <div className={styles.historico__container}>
-                <h2 className={styles.historico__titulo}> {evento.unidadeBaseValor} {evento.unidadeBaseNome} </h2>
-                <FontAwesomeIcon onClick={excluir} icon={faTimesCircle} className={styles.historico__icone} />
+        <div className={styles.item}>
+            <div className={styles.item__container}>
+                <h2 className={styles.item__titulo}> {evento.unidadeBaseValor} {evento.unidadeBaseNome} </h2>
+                <FontAwesomeIcon onClick={excluir} icon={faTimesCircle} className={styles.item__icone} />
             </div>
 
-            <ul className={styles.historico__lista}>
-                <li className={styles.historico__item}>
-                    <strong className={styles.historico__valor}> {evento.transformacao1} </strong> {evento.transformacao1Nome}
+            <ul className={styles.item__lista}>
+                <li className={styles.item__lista__item}>
+                    <strong className={styles.item__valor}> {evento.transformacao1} </strong> {evento.transformacao1Nome}
                 </li>
-                <li className={styles.historico__item}>
-                    <strong className={styles.historico__valor}> {evento.transformacao2} </strong> {evento.transformacao2Nome}
+                <li className={styles.item__lista__item}>
+                    <strong className={styles.item__valor}> {evento.transformacao2} </strong> {evento.transformacao2Nome}
                 </li>
             </ul>
         </div>

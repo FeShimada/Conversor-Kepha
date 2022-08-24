@@ -6,7 +6,7 @@ export const Inicio = () => {
     return (
         <section>
             <header className={styles.header}>
-                <h1 className={styles.titulo}>Conversor de medidas</h1>
+                <h1 className={styles.header__titulo}>Conversor de medidas</h1>
             </header>
 
             <div className={styles.container}>
