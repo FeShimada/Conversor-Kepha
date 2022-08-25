@@ -1,4 +1,4 @@
-import styles from './NotFound.module.scss'
+import styles from './NotFound.module.scss';
 
 export const NotFound = () => {
 
@@ -7,7 +7,7 @@ export const NotFound = () => {
             <h2 className={styles.container__titulo}>404</h2>
             <p className={styles.container__texto}>Oops, página não encontrada</p>                  
         </div>
-    )
-}
+    );
+};
 
 

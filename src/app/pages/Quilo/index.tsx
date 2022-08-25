@@ -6,26 +6,24 @@ import { Conversor, Conversores } from '../../components/Conversor/Conversor';
 
 export const Quilo = () => {
 
-    const valor = useRecoilValue(valorState)
-    const libras = quilosParaLibras(valor)
-    const oncas = quilosParaOncas(valor)
+    const valor = useRecoilValue(valorState);
+    const libras = quilosParaLibras(valor);
+    const oncas = quilosParaOncas(valor);
 
-    const setUnidadeBase = useSetRecoilState(unidadeBaseState)
-    const unidadeBase = useRecoilValue(unidadeBaseState)
+    const setUnidadeBase = useSetRecoilState(unidadeBaseState);
+    const unidadeBase = useRecoilValue(unidadeBaseState);
     useEffect(() => {
-        setUnidadeBase('Quilo')
-    }, [setUnidadeBase])
+        setUnidadeBase('Quilo');
+    }, [setUnidadeBase]);
 
     return (
         <section>
 
-            <Conversores 
-                unidadeBase={unidadeBase}
-            >
+            <Conversores unidadeBase={unidadeBase}>
                 <Conversor unidade='Libras' funcao={libras} />
                 <Conversor unidade='Onças' funcao={oncas} />
             </Conversores>
 
         </section>
-    )
-}
+    );
+};

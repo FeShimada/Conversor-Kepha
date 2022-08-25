@@ -1,11 +1,11 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import { Inicio } from "../components/Inicio"
-import { GrausCelcius } from "../pages/GrausCelcius"
-import { Litro } from "../pages/Litro"
-import { Metro } from "../pages/Metro"
-import { Quilo } from "../pages/Quilo"
-import { Historico } from "../components/Historico"
-import { NotFound } from "../pages/NotFound"
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Inicio } from '../components/Inicio';
+import { GrausCelcius } from '../pages/GrausCelcius';
+import { Litro } from '../pages/Litro';
+import { Metro } from '../pages/Metro';
+import { Quilo } from '../pages/Quilo';
+import { Historico } from '../components/Historico';
+import { NotFound } from '../pages/NotFound';
 
 export const AppRouter = () => {
 
@@ -24,5 +24,5 @@ export const AppRouter = () => {
                 <Route path='*' element={<NotFound />}></Route>
             </Routes>
         </Router>
-    )
-} 
+    );
+}; 

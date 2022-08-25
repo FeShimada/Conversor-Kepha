@@ -1,4 +1,3 @@
-
 export interface IUnidades {
     unidadeBaseNome: string,
     unidadeBaseValor: number,

@@ -1,16 +1,17 @@
-import { faTimesCircle } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { useSetRecoilState } from "recoil"
-import { IUnidades } from "../../../../interfaces/IUnidades"
-import { conversoesState } from "../../../../state/atom"
-import styles from './Item.module.scss'
+/* eslint-disable react/prop-types */
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useSetRecoilState } from 'recoil';
+import { IUnidades } from '../../../../interfaces/IUnidades';
+import { conversoesState } from '../../../../state/atom';
+import styles from './Item.module.scss';
 
 export const Item: React.FC<{ evento: IUnidades }> = ({ evento } ) => {
 
-    const setConversores = useSetRecoilState<IUnidades[]>(conversoesState)
+    const setConversores = useSetRecoilState<IUnidades[]>(conversoesState);
     const excluir = () => {
-        setConversores(unidadesAntigas => unidadesAntigas.filter(evt => evt.id !== evento.id))
-    }
+        setConversores(unidadesAntigas => unidadesAntigas.filter(evt => evt.id !== evento.id));
+    };
 
     return (
         <div className={styles.item}>
@@ -28,5 +29,5 @@ export const Item: React.FC<{ evento: IUnidades }> = ({ evento } ) => {
                 </li>
             </ul>
         </div>
-    )
-}
+    );
+};

@@ -18,5 +18,5 @@ export const Inicio = () => {
                 </ul>
             </div>
         </section>
-    )
-}
+    );
+};
